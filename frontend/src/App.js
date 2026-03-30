@@ -4,7 +4,9 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + "/api/message")
+    fetch(
+      "https://gateway.graypond-109e262d.eastus.azurecontainerapps.io/api/message",
+    )
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch(() => setMessage("Error connecting to API"));
