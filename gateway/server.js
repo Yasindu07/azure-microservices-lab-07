@@ -2,11 +2,17 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+
+// 🔥 Strong CORS fix
 app.use(
   cors({
     origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
   }),
 );
+
+app.use(express.json());
 
 const PORT = 3000;
 
